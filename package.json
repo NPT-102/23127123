@@ -1,0 +1,12 @@
+{
+  "name": "ci-cd-demo",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node app.js"
+  }
+}
