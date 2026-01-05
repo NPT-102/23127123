@@ -8,5 +8,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node app.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
   }
 }
