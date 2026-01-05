@@ -1,11 +1,17 @@
 pipeline {
     agent any
 
+    environment {
+        NEXT_PUBLIC_GIT_COMMIT = "${env.GIT_COMMIT}"
+    }
+
     stages {
         stage('Install & Build') {
-            steps {
-                bat 'npm install'
-                bat 'npm run build'
+           steps {
+                dir('web') {
+                    bat 'npm install'
+                    bat 'npm run build'
+                }
             }
         }
 
