@@ -66,7 +66,7 @@ export default function Page() {
         </div>
 
         <div style={styles.section}>
-          <h2 style={{ color: "#000" }}>🕒 Last Deploy Time 🕒</h2>
+          <h2 style={{ color: "#000" }}>🕒 Last Deploy Time</h2>
           <p style={{ color: "#000" }}>{time}</p>
         </div>
 
