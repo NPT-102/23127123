@@ -11,7 +11,6 @@ export default function Page() {
   useEffect(() => {
     setTime(new Date().toLocaleString());
 
-    // Giả lập tiến trình CI/CD
     const steps: Step[] = ["build", "docker", "push", "deploy", "done"];
     let i = 0;
 
@@ -25,7 +24,8 @@ export default function Page() {
   }, []);
 
   const renderStep = (step: Step, label: string) => {
-    let color = "#999"; // chưa tới
+    // THAY ĐỔI TẠI ĐÂY: Đổi #999 thành #000 (đen)
+    let color = "#000"; 
     let icon = "";
 
     const order: Step[] = ["build", "docker", "push", "deploy", "done"];
@@ -53,7 +53,7 @@ export default function Page() {
         <p style={styles.subtitle}>Jenkins · Docker · GitHub · Next.js</p>
 
         <div style={styles.section}>
-          <h2>📦 Deployment Status</h2>
+          <h2 style={{ color: "#000" }}>📦 Deployment Status</h2>
           {renderStep("build", "Build Application")}
           {renderStep("docker", "Build Docker Image")}
           {renderStep("push", "Push Image to Docker Hub")}
@@ -66,25 +66,25 @@ export default function Page() {
         </div>
 
         <div style={styles.section}>
-          <h2>🕒 Last Deploy Time</h2>
-          <p>{time}</p>
+          <h2 style={{ color: "#000" }}>🕒 Last Deploy Time 🕒</h2>
+          <p style={{ color: "#000" }}>{time}</p>
         </div>
 
         <div style={styles.section}>
-          <h2>🔁 Git Information</h2>
-          <p>
+          <h2 style={{ color: "#000" }}>🔁 Git Information</h2>
+          <p style={{ color: "#000" }}>
             <strong>Commit:</strong>{" "}
             {process.env.NEXT_PUBLIC_GIT_COMMIT || "Unknown"}
           </p>
-          <p>
+          <p style={{ color: "#000" }}>
             <strong>Branch:</strong> main
           </p>
         </div>
 
         <div style={styles.section}>
-          <h2>🐳 Container Info</h2>
-          <p>Docker Image: <code>npt102/23127123</code></p>
-          <p>Port: 3000</p>
+          <h2 style={{ color: "#000" }}>🐳 Container Info</h2>
+          <p style={{ color: "#000" }}>Docker Image: <code>npt102/23127123</code></p>
+          <p style={{ color: "#000" }}>Port: 3000</p>
         </div>
 
         <div style={styles.footer}>
@@ -110,14 +110,16 @@ const styles: Record<string, React.CSSProperties> = {
     borderRadius: 12,
     width: 520,
     boxShadow: "0 20px 40px rgba(0,0,0,0.2)",
+    color: "#000", // Ép toàn bộ text trong card mặc định là đen
   },
   title: {
     textAlign: "center",
     marginBottom: 5,
+    color: "#000",
   },
   subtitle: {
     textAlign: "center",
-    color: "#555",
+    color: "#000", // Đã đổi từ #555 sang #000
     marginBottom: 30,
   },
   section: {
@@ -127,6 +129,6 @@ const styles: Record<string, React.CSSProperties> = {
     marginTop: 30,
     textAlign: "center",
     fontSize: 12,
-    color: "#777",
+    color: "#000", // Đã đổi từ #777 sang #000
   },
 };
